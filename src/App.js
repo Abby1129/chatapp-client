@@ -1,9 +1,18 @@
-import "./App.css";
+import { connect, sendMsg } from "./api/index";
+import Header from "./components/Header/Header";
 
 function App() {
+  connect();
+
+  const send = () => {
+    console.log("hello");
+    sendMsg("Hello World");
+  };
+
   return (
     <div className="App">
-      <h1>App Component</h1>
+      <Header />
+      <button onClick={send}>Hit</button>
     </div>
   );
 }
